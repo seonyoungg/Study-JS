@@ -29,3 +29,12 @@
 7
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+const length = parseInt(fileData[0]);
+
+for (let i = 1; i <= length; i++) {
+  const [a, b] = fileData[i].split(' ').map(Number);
+  console.log(a + b);
+}

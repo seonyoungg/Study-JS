@@ -38,3 +38,25 @@
 600
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split(' ');
+
+const numA = parseInt(fileData[0]);
+const numB = parseInt(fileData[1]);
+const numC = parseInt(fileData[2]);
+
+if (numA == numB) {
+  if (numA == numC) {
+    console.log(10000 + numA * 1000);
+  } else {
+    console.log(1000 + numA * 100);
+  }
+} else if (numA !== numB) {
+  if (numA == numC) {
+    console.log(1000 + numA * 100);
+  } else if (numB == numC) {
+    console.log(1000 + numB * 100);
+  } else {
+    console.log(Math.max(numA, numB, numC) * 100);
+  }
+}

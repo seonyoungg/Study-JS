@@ -40,3 +40,18 @@
 22 55
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split(' ');
+
+const hh = parseInt(fileData[0]);
+const mm = parseInt(fileData[1]);
+
+if (mm >= 45) {
+  console.log(hh, mm - 45);
+} else {
+  if (hh == 0) {
+    console.log(23, mm + 15);
+  } else {
+    console.log(hh - 1, mm + 15);
+  }
+}
