@@ -36,9 +36,29 @@
 
 const fs = require('fs');
 const fileData = fs.readFileSync(0).toString().trim().split(' ');
-// console.log(fileData);
 
 const a = parseInt(fileData[0]);
 const b = parseInt(fileData[1]);
 
-console.log(a + b);
+// 방법1
+// const bArray = b.toString().split('');
+// const ba = parseInt(bArray[0]);
+// const bb = parseInt(bArray[1]);
+// const bc = parseInt(bArray[2]);
+// console.log(a, b, aa, ab, ac);
+
+// console.log(a * bc);
+// console.log(a * bb);
+// console.log(a * ba);
+// console.log(a * b);
+
+// 방법2
+const b1 = b % 10;
+const b2 = ((b - b1) % 100) / 10;
+const b3 = (b - b1 - b2 * 10) / 100;
+
+// console.log(b1, b2, b3);
+console.log(a * b1);
+console.log(a * b2);
+console.log(a * b3);
+console.log(a * b);
