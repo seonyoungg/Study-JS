@@ -3,5 +3,5 @@
 */
 
 console.log('HELLO WORLD!');
-
-
+console.log('HELLO');
+console.log('WORLD');
