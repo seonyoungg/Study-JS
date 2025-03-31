@@ -136,3 +136,16 @@ No
 No
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+const sum = parseInt(fileData[0]);
+const total = parseInt(fileData[1]);
+
+let calSum = 0;
+for (let i = 2; i < total + 2; i++) {
+  const [a, b] = fileData[i].split(' ').map(Number);
+  calSum += a * b;
+}
+
+console.log(sum === calSum ? 'Yes' : 'No');
