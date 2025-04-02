@@ -42,3 +42,7 @@ console.log(false && false); //false
 id = null;
 console.log('글자수', id && id.length);
 console.log('글자수', id?.length);
+
+idx ? true : false;
+
+id?.true;
