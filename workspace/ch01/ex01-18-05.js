@@ -1,66 +1,135 @@
 /*
-if-elseif
 
-1. 정보처리 기사 필기 시험의 과목은 소프트웨어 설계, 소프트웨어 개발, 데이터베이스 구축, 프로그래밍 언어 활용, 정보 시스템 구축 관리 입니다.
-다섯 과목의 점수가 다음과 같을 때 총점과 평균을 출력하는 프로그램을 작성하세요.
-출력 결과:
-총점: 303
-평균: 60.6
+지정한 연산자와 숫자를 받아서 사칙 연산을 수행하는 프로그램
+연산자는 +, -, *, /만 입력 가능
 
-2. 최고점과 최저점을 추가로 출력하세요
-출력 결과:
-총점: 303
-평균: 60.6
-최고점: 80
-최저점: 48
-
-3. 과목당 40점 이상, 전과목 평균 60점 이상이면 합격입니다.
-합격 여부를 추가로 출력하세요.
-
-축하합니다. 합격입니다.
-
-4. 만약 불합격일 경우 불합격 사유를 추가로 출력하세요.
-
-아쉽지만 불합격입니다. 사유: 평균 60점 미달(57점)
-아쉽지만 불합격입니다. 사유: 과락 40점 미달(30점)
+잘못된 연산자를 입력할 경우 '잘못된 입력' 출력
 */
 
-const scoreSubject = {
-  softwareDesign: 38,
-  softwareDevelopment: 80,
-  databaseSetup: 20,
-  programmingUsage: 70,
-  systemManagement: 55,
-};
+const operator = '+';
+const n1 = 10;
+const n2 = 20;
 
-const total = Object.values(scoreSubject).reduce((a, b) => a + b, 0);
-const average = total / Object.keys(scoreSubject).length;
+const operatorArray = ['+', '-', '*', '/'];
 
-const highest = Math.max(...Object.values(scoreSubject));
-const lowest = Math.min(...Object.values(scoreSubject));
-
-const criteriaScore = 40;
-const criteriaAverage = 60;
-
-console.log(`총점: ${total}`);
-console.log(`평균: ${average}`);
-console.log(`최고점: ${highest}`);
-console.log(`최저점: ${lowest}`);
-
-const failSubject = Object.entries(scoreSubject)
-  .filter(([_, score]) => score < criteriaScore)
-  .map(([subject, score]) => `${subject}:  ${score}점`);
-
-if (average >= criteriaAverage && failSubject.length === 0) {
-  console.log('축하합니다. 합격입니다.');
+if (
+  operator === '+' ||
+  operator === '-' ||
+  operator === '*' ||
+  operator === '/'
+) {
+  console.log(n1, operator, n2);
 } else {
-  console.log('아쉽지만 불합격입니다.');
-  if (average < criteriaAverage) {
-    console.log(`사유: 평균 ${criteriaAverage}점 미달(${average}점)`);
+  console.log('잘못된 입력');
+}
+
+if (operatorArray.includes(operator)) {
+  console.log(eval(`${n1} ${operator} ${n2}`));
+} else {
+  console.log('잘못된 입력');
+}
+
+/*
+1 ~ 7 사이의 숫자를 받아서 해당 요일을 출력하는 프로그램
+1은 월요일, 2는 화요일, ... 7은 일요일
+1 ~ 7 사이의 숫자가 아닐 경우 "잘못된 입력" 출력
+*/
+
+const day = 4;
+let dayName;
+
+if (day === 1) {
+  dayName = '월요일';
+} else if (day === 2) {
+  dayName = '화요일';
+} else if (day === 3) {
+  dayName = '수요일';
+} else if (day === 4) {
+  dayName = '목요일';
+} else if (day === 5) {
+  dayName = '금요일';
+} else if (day === 6) {
+  dayName = '토요일';
+} else if (day === 7) {
+  dayName = '일요일';
+} else {
+  dayName = '잘못된 입력';
+}
+console.log(dayName);
+
+switch (day) {
+  case 1:
+    console.log('월요일');
+    break;
+  case 2:
+    console.log('화요일');
+    break;
+  case 3:
+    console.log('수요일');
+    break;
+  case 4:
+    console.log('목요일');
+    break;
+  case 5:
+    console.log('금요일');
+    break;
+  case 6:
+    console.log('토요일');
+    break;
+  case 7:
+    console.log('일요일');
+  default:
+    console.log('잘못된 입력');
+}
+
+/*
+1 ~ 12 사이의 월을 받아서 게절을 출력하는 프로그램
+봄: 4월, 여름: 5 ~ 10월, 가을: 11월, 겨울: 12 ~ 3월
+1 ~ 12 사이의 숫자가 아닐 경우 "잘못된 입력" 출력
+*/
+
+const month = 2;
+let monthName;
+
+if (month > 0) {
+  if (month === 4) {
+    monthName = '봄봄';
+  } else if (month >= 5 && month <= 10) {
+    monthName = '여름여름';
+  } else if (month === 11) {
+    monthName = '가을가을';
+  } else if (month <= 3 || month === 12) {
+    monthName = '겨울겨울';
+  } else {
+    monthName = '잘못된 입력';
   }
-  if (failSubject.length > 0) {
-    console.log(
-      `사유: 과락 ${criteriaScore}점 미달(${failSubject.join(', ')})`
-    );
-  }
+} else {
+  monthName = '잘못된 입력';
+}
+
+console.log(monthName);
+
+switch (month) {
+  case 4:
+    console.log('봄');
+    break;
+  case 11:
+    console.log('가을');
+    break;
+  case 5:
+  case 6:
+  case 7:
+  case 8:
+  case 9:
+  case 10:
+    console.log('여름');
+    break;
+  case 1:
+  case 2:
+  case 3:
+  case 12:
+    console.log('겨울');
+    break;
+  default:
+    console.log('잘못된 입력');
 }
