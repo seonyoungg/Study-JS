@@ -24,3 +24,19 @@ X보다 작은 수를 입력받은 순서대로 공백으로 구분해 출력한
 1 4 2 3
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split("\n");
+
+const NX = fileData[0].split(" ");
+const array = fileData[1].split(" ").map(Number);
+
+const n = parseInt(NX[0]);
+const x = parseInt(NX[1]);
+
+let result = ''
+for(let i=0;i<n;i++){
+  if(array[i]<x){
+    result += array[i]+' '
+  }
+}
+console.log(result);

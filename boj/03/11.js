@@ -30,3 +30,15 @@
 7
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split("\n");
+
+const length = fileData.length;
+
+for(let i=0;i<length; i++){
+  const numberArray = fileData[i].split(" ");
+  const a = parseInt(numberArray[0]);
+  const b = parseInt(numberArray[1]);
+
+  console.log(a+b);
+}

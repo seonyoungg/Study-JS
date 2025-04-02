@@ -23,3 +23,12 @@
 *****
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim();
+const lines = parseInt(fileData);
+
+let result = "";
+for(let i=0;i<lines;i++){
+  result += "*";
+  console.log(result);
+}

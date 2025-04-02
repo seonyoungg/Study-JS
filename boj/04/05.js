@@ -36,3 +36,21 @@
 1 2 1 1 0
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split("\n");
+
+const NM = fileData[0].split(' ');
+const N = parseInt(NM[0]);
+const M = parseInt(NM[1]);
+
+let basket = Array(N).fill(0);
+
+for(let i=1;i<M+1;i++){
+  const array = fileData[i].split(" ").map(Number);
+  const start = array[0];
+  const end = array[1];
+  const ball = array[2];
+
+  basket.fill(ball,start-1,end);
+}
+console.log(basket.join(" "));

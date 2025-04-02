@@ -51,3 +51,17 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline을 사용할 �
 2000
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split("\n");
+
+const total = parseInt(fileData[0]);
+let result = ""
+for(let i=1;i<=total;i++){
+  const numberArray = fileData[i].split(" ")
+  const a = parseInt(numberArray[0]);
+  const b = parseInt(numberArray[1]);
+  
+  result += (a+b)+"\n";
+}
+
+console.log(result);

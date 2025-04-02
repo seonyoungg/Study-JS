@@ -30,3 +30,27 @@
 3 1 4 2 5
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+const NM = fileData[0].split(' ');
+const N = parseInt(NM[0]);
+const M = parseInt(NM[1]);
+
+let basket = [];
+for (let i = 1; i < N + 1; i++) {
+  basket.push(i);
+}
+
+for (let i = 1; i < M + 1; i++) {
+  const array = fileData[i].split(' ').map(Number);
+  const ball = array[0];
+  const ballCopy = basket[ball - 1];
+  const ball2 = array[1];
+  const ballCopy2 = basket[ball2 - 1];
+
+  basket.splice(ball - 1, 1, ballCopy2);
+  basket.splice(ball2 - 1, 1, ballCopy);
+}
+
+console.log(basket.join(' '));

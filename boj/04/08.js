@@ -59,3 +59,16 @@
 6
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n').map(Number);
+
+const num = 42;
+
+let result = [];
+for (let i = 0; i < fileData.length; i++) {
+  if (!result.includes(fileData[i] % num)) {
+    result.push(fileData[i] % num);
+  }
+}
+
+console.log(result.length);

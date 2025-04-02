@@ -142,10 +142,14 @@ const fileData = fs.readFileSync(0).toString().trim().split('\n');
 const sum = parseInt(fileData[0]);
 const total = parseInt(fileData[1]);
 
-let calSum = 0;
-for (let i = 2; i < total + 2; i++) {
-  const [a, b] = fileData[i].split(' ').map(Number);
-  calSum += a * b;
+let calTotal = 0;
+
+for (let i = 2; i <= total+1; i++) {
+  const element = fileData[i].split(' ');
+  const a = parseInt(element[0]);
+  const b = parseInt(element[1]);
+
+  calTotal += a*b;
 }
 
-console.log(sum === calSum ? 'Yes' : 'No');
+console.log(sum===calTotal?'Yes':'No');

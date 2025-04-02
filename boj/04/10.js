@@ -69,3 +69,17 @@
 55.55555555555556
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+const count = parseInt(fileData[0]);
+const subject = fileData[1].split(' ').map(Number);
+
+let maxNum = Math.max(...subject);
+let sum = 0;
+
+for (let i = 0; i < count; i++) {
+  sum += (subject[i] / maxNum) * 100;
+}
+
+console.log(sum / count);

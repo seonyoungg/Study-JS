@@ -23,3 +23,29 @@ N개의 정수가 주어진다.
 7 35
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split("\n");
+
+const count = parseInt(fileData[0]);
+const array = fileData[1].split(" ").map(Number);
+// const min = Math.min(...array);
+// const max = Math.max(...array);
+
+// console.log(min, max);
+
+
+let maxNumber = array[0];
+let minNumber = array[0];
+
+for(let i=0;i<count;i++){
+  
+  if(maxNumber < array[i]){
+    maxNumber = array[i]
+  };
+
+  if(minNumber > array[i]){
+    minNumber = array[i]
+  };
+}
+
+console.log(minNumber,maxNumber);

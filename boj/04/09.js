@@ -130,3 +130,27 @@ M번 바구니의 순서를 역순으로 만든 다음, 바구니에 적혀있�
 6 7 3 2 1 10 9 8 4 5
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+const NM = fileData[0].split(' ');
+const N = parseInt(NM[0]);
+const M = parseInt(NM[1]);
+
+let basket = [];
+for (let i = 1; i < N + 1; i++) {
+  basket.push(i);
+}
+
+for (let j = 1; j < M + 1; j++) {
+  const array = fileData[j].split(' ').map(Number);
+  const start = array[0];
+  const end = array[1];
+  const count = end - start + 1;
+
+  const newBasket = basket.slice(start - 1, end).reverse();
+
+  basket.splice(start - 1, count, ...newBasket);
+}
+
+console.log(basket.join(' '));

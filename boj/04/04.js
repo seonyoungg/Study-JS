@@ -184,3 +184,21 @@
 1
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split("\n").map(Number);
+
+let maxNum = fileData[0];
+for(let i=0;i<fileData.length;i++){
+  if(maxNum<=fileData[i]){
+    maxNum = fileData[i]
+  };
+};
+console.log(maxNum);
+
+let count = 0;
+for(let k=0;k<fileData.length;k++){
+  if(maxNum === fileData[k]){
+    count = k+1
+  };
+};
+console.log(count);

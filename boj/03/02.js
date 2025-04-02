@@ -35,6 +35,8 @@ const fileData = fs.readFileSync(0).toString().trim().split('\n');
 const length = parseInt(fileData[0]);
 
 for (let i = 1; i <= length; i++) {
-  const [a, b] = fileData[i].split(' ').map(Number);
+  const sumElement = fileData[i].split(' ');
+  const a = parseInt(sumElement[0]);
+  const b = parseInt(sumElement[1]);
   console.log(a + b);
 }

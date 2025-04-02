@@ -81,3 +81,21 @@ X대학 M교수님은 프로그래밍 수업을 맡고 있다.
 8
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n').map(Number);
+
+const num = 30;
+const array = [];
+for (let i = 1; i < num + 1; i++) {
+  array.push(i);
+}
+
+let newArray = [];
+for (let k = 0; k < array.length; k++) {
+  if (!fileData.includes(array[k])) {
+    newArray.push(array[k]);
+  }
+}
+
+console.log(Math.min(...newArray));
+console.log(Math.max(...newArray));

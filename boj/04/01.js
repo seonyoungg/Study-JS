@@ -39,3 +39,17 @@
 1
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split("\n");
+
+const num = parseInt(fileData[0]);
+const array = fileData[1].split(" ").map(Number);
+const search = parseInt(fileData[2]);
+
+let count = 0;
+for (let i=0;i<array.length;i++){
+  if(array[i]===search){
+    count++;
+  }
+}
+console.log(count);

@@ -24,3 +24,35 @@
 *****
 */
 
+// const fs = require("fs");
+// const fileData = fs.readFileSync(0).toString().trim();
+// const lines = parseInt(fileData);
+
+// for(let i = 0; i < lines; i++) {
+//   let result = "";
+//   for(let k = 0; k < lines; k++) {
+//     if (k >= lines - i - 1) {
+//       result += "*";
+//     } else {
+//       result += " ";
+//     }
+//   }
+//   console.log(result);
+// }
+
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim();
+const lines = parseInt(fileData);
+
+for(let i=0;i<lines;i++){
+  let str="";
+
+  for(let k=0;k<lines;k++){
+    if(k>=lines-i-1){
+      str+="*"
+    }else{
+      str+=" "
+    }
+  }
+  console.log(str);
+};
