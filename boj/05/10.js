@@ -36,3 +36,35 @@ UNUCIC
 36
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('');
+
+let total = 0;
+let time = 0;
+
+for (i = 0; i < fileData.length; i++) {
+  let words = fileData[i];
+  let wordsCode = words.charCodeAt();
+
+  if (wordsCode <= 'C'.charCodeAt()) {
+    time = 3;
+  } else if (wordsCode <= 'F'.charCodeAt()) {
+    time = 4;
+  } else if (wordsCode <= 'I'.charCodeAt()) {
+    time = 5;
+  } else if (wordsCode <= 'L'.charCodeAt()) {
+    time = 6;
+  } else if (wordsCode <= 'O'.charCodeAt()) {
+    time = 7;
+  } else if (wordsCode <= 'S'.charCodeAt()) {
+    time = 8;
+  } else if (wordsCode <= 'V'.charCodeAt()) {
+    time = 9;
+  } else if (wordsCode <= 'Z'.charCodeAt()) {
+    time = 10;
+  }
+
+  total += time;
+}
+
+console.log(total);

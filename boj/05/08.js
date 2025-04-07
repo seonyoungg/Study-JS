@@ -84,3 +84,19 @@ A
 1
 */
 
+//filter(Boolean) 알아두기!
+
+const fs = require('fs');
+const fileData = fs
+  .readFileSync(0)
+  .toString()
+  .trim()
+  .split(' ')
+  .filter(Boolean);
+
+console.log(fileData.length);
+
+// const fs = require('fs');
+// const fileData = fs.readFileSync(0).toString().trim().match(/\S+/g);
+
+// console.log(fileData ? fileData.length : 0);

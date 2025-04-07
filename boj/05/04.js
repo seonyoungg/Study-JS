@@ -43,3 +43,8 @@ z
 122
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim();
+const words = fileData[0];
+
+console.log(words.charCodeAt());

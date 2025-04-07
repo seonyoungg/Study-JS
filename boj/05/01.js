@@ -32,3 +32,12 @@ Baekjoon
 k
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+const string = fileData[0];
+const slice = parseInt(fileData[1]);
+
+// console.log(string.substring(slice - 1, slice));
+
+console.log(string.substr(slice - 1, 1));

@@ -48,17 +48,14 @@ long int
 long long long long long int
 */
 
-const fs = require("fs");
-const fileData = fs.readFileSync(0).toString().trim().split(" ");
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim();
 
-const N = parseInt(fileData[0]);
-let result="";
-
-for(let i=0;i<N/4;i++){
-  result += "long ";
+const N = parseInt(fileData); // 입력된 값을 정수로 변환
+const repeat = N / 4; // N의 정수를 4로 나눈 몫
+let result = '';
+for (i = 0; i < repeat; i++) {
+  result += 'long '; //repeat의 수만큼 'long' 문자열 저장
 }
 
-result += 'int';
-console.log(result);
-
-
+console.log(result + 'int'); // 'long*repeat + int' 문자 출력

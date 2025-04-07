@@ -37,4 +37,14 @@
 예제 출력 3
 938
 */
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split(' ');
 
+const number = parseInt(fileData[0].split('').reverse().join(''));
+const number2 = parseInt(fileData[1].split('').reverse().join(''));
+
+if (number > number2) {
+  console.log(number);
+} else {
+  console.log(number2);
+}

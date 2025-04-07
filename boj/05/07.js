@@ -27,3 +27,19 @@ AAABBBCCC
 /////HHHHHTTTTTPPPPP
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+const length = parseInt(fileData[0]);
+let result = '';
+for (i = 1; i <= length; i++) {
+  const lines = fileData[i].split(' ');
+  const repeat = parseInt(lines[0]);
+  const str = lines[1].split('');
+
+  for (k = 0; k < str.length; k++) {
+    result += str[k].repeat(repeat);
+  }
+  result += '\n';
+}
+console.log(result);

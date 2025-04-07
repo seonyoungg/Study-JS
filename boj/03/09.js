@@ -23,12 +23,16 @@
 *****
 */
 
-const fs = require("fs");
+const fs = require('fs');
 const fileData = fs.readFileSync(0).toString().trim();
-const lines = parseInt(fileData);
+const lines = parseInt(fileData); //들어온 값 정수로 반환
 
-let result = "";
-for(let i=0;i<lines;i++){
-  result += "*";
+let result = '';
+for (let i = 0; i < lines; i++) {
+  result += '*';
   console.log(result);
 }
+
+// i=0일때 *로 저장 -> '*'
+// i=1일때 * + * 저장 -> '**'
+// i=n일때 * 갯수(n+1)

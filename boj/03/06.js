@@ -51,17 +51,17 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline을 사용할 �
 2000
 */
 
-const fs = require("fs");
-const fileData = fs.readFileSync(0).toString().trim().split("\n");
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+let T = parseInt(fileData[0]); // 테스트 개수
 
-const total = parseInt(fileData[0]);
-let result = ""
-for(let i=1;i<=total;i++){
-  const numberArray = fileData[i].split(" ")
-  const a = parseInt(numberArray[0]);
-  const b = parseInt(numberArray[1]);
-  
-  result += (a+b)+"\n";
+let sum = 0;
+for (let i = 1; i <= T; i++) {
+  const data = fileData[i].split(' ');
+  const firstN = parseInt(data[0]);
+  const secondN = parseInt(data[1]);
+
+  sum += firstN + secondN + '\n';
 }
 
-console.log(result);
+console.log(sum);

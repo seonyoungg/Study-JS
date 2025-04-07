@@ -20,12 +20,13 @@ n이 주어졌을 때, 1부터 n까지 합을 구하는 프로그램을 작성�
 */
 
 const fs = require('fs');
-const fileData = fs.readFileSync(0).toString().trim().split(' ');
+const fileData = fs.readFileSync(0).toString().trim();
 
+const n = parseInt(fileData); //정수로 변환
 let sum = 0;
-const num = parseInt(fileData[0]);
-for (let i = 1; i <= num; i++) {
-  sum += i;
+for (let i = 1; i <= n; i++) {
+  //1부터 n까지 출력
+  sum += i; // sum에 계속 더해짐
 }
 
-console.log(sum);
+console.log(sum); //합계 출력

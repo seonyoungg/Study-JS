@@ -32,11 +32,20 @@
 const fs = require('fs');
 const fileData = fs.readFileSync(0).toString().trim().split('\n');
 
-const length = parseInt(fileData[0]);
+// 테스트 케이스의 개수 T
+const Tcount = parseInt(fileData[0]);
 
-for (let i = 1; i <= length; i++) {
-  const sumElement = fileData[i].split(' ');
-  const a = parseInt(sumElement[0]);
-  const b = parseInt(sumElement[1]);
-  console.log(a + b);
+if (fileData.length > 1) {
+  // 2번째 줄부터 시작(=index[1])
+  for (let i = 1; i <= Tcount; i++) {
+    // 2번째줄 lines 는 [a b]형태로 반환된 것을 공백을 기준으로 나눔
+    const lines = fileData[i].split(' ');
+
+    // a와 b number type으로 변환
+    const a = parseInt(lines[0]);
+    const b = parseInt(lines[1]);
+
+    //매번 a+b 반환
+    console.log(a + b);
+  }
 }

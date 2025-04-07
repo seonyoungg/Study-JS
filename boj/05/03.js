@@ -26,3 +26,14 @@ OO
 AB
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+const length = parseInt(fileData[0]);
+
+for (let i = 1; i < length + 1; i++) {
+  let strLeng = fileData[i].length;
+  let first = fileData[i].substr(0, 1);
+  let end = fileData[i].substr(strLeng - 1, 1);
+
+  console.log(first + end);
+}

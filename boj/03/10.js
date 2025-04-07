@@ -40,19 +40,32 @@
 //   console.log(result);
 // }
 
-const fs = require("fs");
+const fs = require('fs');
 const fileData = fs.readFileSync(0).toString().trim();
-const lines = parseInt(fileData);
+const lines = parseInt(fileData); //들어온 값 정수로 반환
 
-for(let i=0;i<lines;i++){
-  let str="";
+/**
+ *   k  0 1 2 3 4         k 0 1 2 3
+ * i=0  _ _ _ _ *       i=0 _ _ _ *
+ * i=1  _ _ _ * *       i=1 _ _ * *
+ * i=2  _ _ * * *       i=2 _ * * *
+ * i=3  _ * * * *       i=3 * * * *
+ * i=4  * * * * *
+ */
 
-  for(let k=0;k<lines;k++){
-    if(k>=lines-i-1){
-      str+="*"
-    }else{
-      str+=" "
+// *의 해당하는 값들은 i+k >= 4(lines-1) 의 형태임을 알 수 있음
+// k >= lines - 1 -i
+
+for (let i = 0; i < lines; i++) {
+  let star = '';
+
+  for (let k = 0; k < lines; k++) {
+    if (k >= lines - 1 - i) {
+      star += '*'; // * 해당하는 값인 조건
+    } else {
+      star += ' '; // 공백에 해당하는 값인 조건
     }
   }
-  console.log(str);
-};
+
+  console.log(star); //i의 해당하는 k조건문이 끝나면 출력, 이후 i에 의한 for문이 다시 시작될 때 star를 초기화해줌
+}

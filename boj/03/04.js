@@ -140,16 +140,14 @@ const fs = require('fs');
 const fileData = fs.readFileSync(0).toString().trim().split('\n');
 
 const sum = parseInt(fileData[0]);
-const total = parseInt(fileData[1]);
+const count = parseInt(fileData[1]);
 
 let calTotal = 0;
 
-for (let i = 2; i <= total+1; i++) {
-  const element = fileData[i].split(' ');
-  const a = parseInt(element[0]);
-  const b = parseInt(element[1]);
+for (let i = 2; i <= count + 1; i++) {
+  const [a, b] = fileData[i].split(' ').map(Number);
 
-  calTotal += a*b;
+  calTotal += a * b;
 }
 
-console.log(sum===calTotal?'Yes':'No');
+console.log(sum === calTotal ? 'Yes' : 'No');

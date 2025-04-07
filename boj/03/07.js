@@ -29,17 +29,13 @@ Case #4: 17
 Case #5: 7
 */
 
-const fs = require("fs");
-const fileData = fs.readFileSync(0).toString().trim().split("\n");
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
 
-const total = parseInt(fileData[0]);
-let result = "";
-for(let i=1;i<=total;i++){
-  const numberArray = fileData[i].split(" ");
-  const a = parseInt(numberArray[0]);
-  const b = parseInt(numberArray[1]);
-
-  result += `Case #${i}: ${a + b}`+('\n')
+let result = '';
+for (let i = 1; i <= parseInt(fileData[0]); i++) {
+  const [a, b] = fileData[i].split(' ').map(Number);
+  result += `Case #${i}: ${a + b}` + '\n';
 }
 
 console.log(result);

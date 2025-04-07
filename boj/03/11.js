@@ -30,15 +30,18 @@
 7
 */
 
-const fs = require("fs");
-const fileData = fs.readFileSync(0).toString().trim().split("\n");
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n'); // \n 줄을 기준으로 나눈 후 배열로 반환
 
-const length = fileData.length;
+const length = fileData.length; // 배열의 길이를 측정
 
-for(let i=0;i<length; i++){
-  const numberArray = fileData[i].split(" ");
-  const a = parseInt(numberArray[0]);
-  const b = parseInt(numberArray[1]);
+for (let i = 0; i < length; i++) {
+  const numberArray = fileData[i].split(' '); // 공백을 기준으로 줄 마다 배열로 반환
+  const a = parseInt(numberArray[0]); // 배열의 첫번째 숫자 반환
+  const b = parseInt(numberArray[1]); // 배열의 두번째 숫자 반환
 
-  console.log(a+b);
+  //마지막 줄은 포함하지 않음
+  if (i !== length - 1) {
+    console.log(a + b);
+  }
 }
