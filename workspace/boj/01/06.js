@@ -22,10 +22,26 @@
 2
 1
 */
-const fs = require('fs');
-const fileData = fs.readFileSync(0).toString().trim().split(' ');
-// // console.log(fileData);
 
-const a = parseInt(fileData[0]);
-const b = parseInt(fileData[1]);
-console.log(`${a + b}\n${a - b}\n${a * b}\n${Math.trunc(a / b)}\n${a % b}`);
+function main() {
+  const data = getData();
+
+  console.log(data.a + data.b);
+  console.log(data.a - data.b);
+  console.log(data.a * data.b);
+  console.log(Math.trunc(data.a / data.b));
+  console.log(data.a % data.b);
+}
+main();
+
+function getData() {
+  const fs = require('fs');
+  const fileData = fs.readFileSync(0).toString().trim().split(' ');
+
+  const result = new Object();
+
+  result.a = parseInt(fileData[0]);
+  result.b = parseInt(fileData[1]);
+
+  return result;
+}

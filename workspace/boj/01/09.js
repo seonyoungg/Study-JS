@@ -23,14 +23,28 @@
 0
 0
 */
-const fs = require('fs');
-const fileData = fs.readFileSync(0).toString().trim().split(' ');
+function main() {
+  const data = getData();
 
-const a = parseInt(fileData[0]);
-const b = parseInt(fileData[1]);
-const c = parseInt(fileData[2]);
+  const A = data.a;
+  const B = data.b;
+  const C = data.c;
 
-console.log((a + b) % c);
-console.log(((a % c) + (b % c)) % c);
-console.log((a * b) % c);
-console.log(((a % c) * (b % c)) % c);
+  console.log((A + B) % C);
+  console.log(((A % C) + (B % C)) % C);
+  console.log((A * B) % C);
+  console.log(((A % C) * (B % C)) % C);
+}
+main();
+
+function getData() {
+  const fs = require('fs');
+  const fileData = fs.readFileSync(0).toString().trim().split(' ');
+  const result = new Object();
+
+  result.a = parseInt(fileData[0]);
+  result.b = parseInt(fileData[1]);
+  result.c = parseInt(fileData[2]);
+
+  return result;
+}

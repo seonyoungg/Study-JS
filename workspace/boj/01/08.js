@@ -22,7 +22,17 @@ ICPC Bangkok Regional에 참가하기 위해 수완나품 국제공항에 막 �
 1998
 */
 
-const fs = require('fs');
-const fileData = fs.readFileSync(0).toString().trim().split(' ');
+function main() {
+  const data = getData();
 
-console.log(fileData - 543);
+  console.log(data - (2541 - 1998));
+}
+main();
+
+function getData() {
+  const fs = require('fs');
+  const fileData = fs.readFileSync(0).toString().trim();
+  const result = isNaN(fileData) ? fileData : Number(fileData);
+
+  return result;
+}

@@ -25,7 +25,16 @@ baekjoon
 baekjoon??!
 */
 
-const fs = require('fs');
-const fileData = fs.readFileSync(0).toString().trim().split(' ');
+function main() {
+  const data = getData();
 
-console.log(fileData + '??!');
+  console.log(data + '??!');
+}
+main();
+
+function getData() {
+  const fs = require('fs');
+  const fileData = fs.readFileSync(0).toString().trim();
+
+  return fileData;
+}
