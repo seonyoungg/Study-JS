@@ -22,3 +22,12 @@ r`-_   ,'  ,/
       |
 */
 
+// const fs = require('fs');
+// const fileData = fs.readFileSync(0).toString().trim().split(' ');
+
+console.log(`         \,r'"7`);
+console.log('r`' + "-_   ,'  ,/");
+console.log(` \\. ". L_r'`);
+console.log('   `~\\/');
+console.log(`      |`);
+console.log(`      |`);

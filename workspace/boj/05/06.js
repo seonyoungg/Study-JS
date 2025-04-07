@@ -31,8 +31,6 @@ let aCode = 'a'.charCodeAt();
 let zCode = 'z'.charCodeAt();
 let length = zCode - aCode + 1;
 
-console.log(length);
-
 let result = Array(length).fill(-1);
 
 for (let i = 0; i < fileData.length; i++) {
@@ -43,3 +41,6 @@ for (let i = 0; i < fileData.length; i++) {
     result[num] = i;
   }
 }
+
+console.log(result);
+console.log(result.join(' '));

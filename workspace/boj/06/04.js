@@ -27,3 +27,15 @@ baekjoon
 0
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split(' ');
+
+const words = fileData[0].trim().split('');
+const basicWords = words.join('');
+const reverseWords = [...words].reverse().join('');
+
+if (basicWords === reverseWords) {
+  console.log(1);
+} else {
+  console.log(0);
+}

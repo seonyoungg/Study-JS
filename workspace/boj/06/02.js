@@ -30,3 +30,13 @@
 -1 0 0 1 0 7
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split(' ');
+
+const result = [1, 1, 2, 2, 2, 8];
+
+for (i = 0; i < fileData.length; i++) {
+  result[i] = parseInt(result[i]) - parseInt(fileData[i]);
+}
+
+console.log(result.join(' '));

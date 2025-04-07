@@ -46,3 +46,22 @@
     *
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim();
+const n = parseInt(fileData);
+
+let result = '';
+
+for (let i = 1; i <= n; i++) {
+  const space = ' '.repeat(n - i);
+  const star = '*'.repeat(2 * i - 1);
+  result += space + star + '\n';
+}
+
+for (let k = n - 1; k > 0; k--) {
+  const space = ' '.repeat(n - k);
+  const star = '*'.repeat(2 * k - 1);
+  result += space + star + '\n';
+}
+
+console.log(result);
