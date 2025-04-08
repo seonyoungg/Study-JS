@@ -27,3 +27,5 @@ const b = parseInt(fileData[1]);
 const c = parseInt(fileData[2]);
 
 console.log(a + b + c);
+
+//TODO - 배고프다;

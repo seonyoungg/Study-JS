@@ -148,3 +148,21 @@ N과 M은 100보다 작거나 같고, 행렬의 원소는 절댓값이 100보다
 1 1 -1
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+const [a, b] = fileData[0].split(' ').map(Number);
+
+let result = '';
+for (let i = 1; i <= a; i++) {
+  const basic = fileData[i].split(' ').map(Number);
+  const plus = fileData[i + a].split(' ').map(Number);
+
+  for (let k = 0; k < b; k++) {
+    let sum = basic[k] + plus[k];
+    result += sum + ' ';
+  }
+  result += '\n';
+}
+
+console.log(result);

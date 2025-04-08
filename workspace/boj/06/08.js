@@ -87,52 +87,50 @@ SplayTree 1.0 F
 예제 출력 2
 0
 */
+
 const fs = require('fs');
 const fileData = fs.readFileSync(0).toString().trim().split('\n');
 
 let result = 0;
 let calResult = 0;
 
-for (let i = 0; i < fileData.length; i++) {
-  const subject = fileData[i].trim().split(' ');
-  const subjectGrade = subject[1];
-  const subjectNum = subject[2];
-  let subjectCal = 0;
+for (i = 0; i < fileData.length; i++) {
+  const array = fileData[i].trim().split(' ');
+  const count = parseFloat(array[1]);
+  const grade = array[2];
 
-  if (subjectNum !== 'P') {
-    let grade = parseFloat(subjectGrade);
-
-    switch (subjectNum) {
+  let gradeNum = 0;
+  if (grade !== 'P') {
+    switch (grade) {
       case 'A+':
-        subjectCal = 4.5;
+        gradeNum = 4.5;
         break;
       case 'A0':
-        subjectCal = 4.0;
+        gradeNum = 4.0;
         break;
       case 'B+':
-        subjectCal = 3.5;
+        gradeNum = 3.5;
         break;
       case 'B0':
-        subjectCal = 3.0;
+        gradeNum = 3.0;
         break;
       case 'C+':
-        subjectCal = 2.5;
+        gradeNum = 2.5;
         break;
       case 'C0':
-        subjectCal = 2.0;
+        gradeNum = 2.0;
         break;
       case 'D+':
-        subjectCal = 1.5;
+        gradeNum = 1.5;
         break;
       case 'D0':
-        subjectCal = 1.0;
+        gradeNum = 1;
         break;
       default:
-        subjectCal = 0.0;
+        gradeNum = 0;
     }
-
-    result += grade;
-    calResult += grade * subjectCal;
+    result += count;
+    calResult += gradeNum * count;
   }
 }
 

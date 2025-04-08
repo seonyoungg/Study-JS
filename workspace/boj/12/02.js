@@ -76,5 +76,16 @@
 91
 */
 
-const fs = require('fs');
-const fileData = fs.readFileSync(0).toString().trim();
+// const fs = require('fs');
+// const fileData = fs.readFileSync(0).toString().trim();
+
+var x = 'global';
+
+function foo() {
+  var x = 'local';
+  console.log(x);
+}
+
+foo();
+
+console.log(x);

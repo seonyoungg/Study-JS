@@ -55,13 +55,16 @@ let result = '';
 for (let i = 1; i <= n; i++) {
   const space = ' '.repeat(n - i);
   const star = '*'.repeat(2 * i - 1);
-  result += space + star + '\n';
+  result += space;
+  result += star;
+  result += '\n';
 }
 
 for (let k = n - 1; k > 0; k--) {
   const space = ' '.repeat(n - k);
   const star = '*'.repeat(2 * k - 1);
-  result += space + star + '\n';
+  result += space;
+  result += star;
+  result += '\n';
 }
-
 console.log(result);

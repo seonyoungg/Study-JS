@@ -36,3 +36,30 @@ baaa
 A
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().toUpperCase();
+
+const aCode = 'A'.charCodeAt();
+const zCode = 'Z'.charCodeAt();
+const wordLength = zCode - aCode + 1;
+
+const wordArray = Array(wordLength).fill(0);
+
+// console.log(fileData.length);
+for (let i = 0; i < fileData.length; i++) {
+  const words = fileData.charCodeAt(i) - aCode;
+  wordArray[words]++;
+}
+
+let max = Math.max(...wordArray);
+
+let count = 0;
+let index = 0;
+for (let t = 0; t < wordArray.length; t++) {
+  if (wordArray[t] === max) {
+    count++;
+    index = t;
+  }
+}
+
+console.log(count > 1 ? '?' : String.fromCharCode(index + 65));
