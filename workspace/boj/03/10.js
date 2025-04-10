@@ -55,17 +55,20 @@ const lines = parseInt(fileData); //들어온 값 정수로 반환
 
 // *의 해당하는 값들은 i+k >= 4(lines-1) 의 형태임을 알 수 있음
 // k >= lines - 1 -i
+// for (let i = 0; i < lines; i++) {
+//   let star = '';
+//   for (let k = 0; k < lines; k++) {
+//     if (k >= lines - 1 - i) {
+//       star += '*'; // * 해당하는 값인 조건
+//     } else {
+//       star += ' '; // 공백에 해당하는 값인 조건
+//     }
+//   }
+//   console.log(star); //i의 해당하는 k조건문이 끝나면 출력, 이후 i에 의한 for문이 다시 시작될 때 star를 초기화해줌
+// }
 
-for (let i = 0; i < lines; i++) {
-  let star = '';
-
-  for (let k = 0; k < lines; k++) {
-    if (k >= lines - 1 - i) {
-      star += '*'; // * 해당하는 값인 조건
-    } else {
-      star += ' '; // 공백에 해당하는 값인 조건
-    }
-  }
-
-  console.log(star); //i의 해당하는 k조건문이 끝나면 출력, 이후 i에 의한 for문이 다시 시작될 때 star를 초기화해줌
+for (let i = 1; i <= lines; i++) {
+  const space = ' '.repeat(lines - i);
+  const star = '*'.repeat(i);
+  console.log(space + star);
 }
