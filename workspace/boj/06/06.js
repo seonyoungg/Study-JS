@@ -54,3 +54,33 @@ dz=ak
 3
 */
 
+// function solution(chicken) {
+//   var answer = 0;
+
+//   const bbqChicken = {
+//     service: Math.trunc(chicken / 10),
+//     coupon: chicken % 10,
+//     sum: function () {
+//       return chicken + this.service;
+//     },
+//   };
+
+//   console.log(bbqChicken.service);
+//   console.log(bbqChicken.coupon);
+//   console.log(bbqChicken.sum());
+//   return answer;
+// }
+
+// solution(1081);
+
+function solution(chicken) {
+  let service = 0;
+
+  while (chicken >= 10) {
+    let newChicken = Math.trunc(chicken / 10);
+    service += newChicken;
+    chicken = newChicken + (chicken % 10);
+  }
+
+  return service;
+}

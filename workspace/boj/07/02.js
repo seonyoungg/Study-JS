@@ -186,3 +186,47 @@
 1 1
 */
 
+function main() {
+  const data = getData();
+
+  let maxNum = 0;
+  let rowIndex = 0;
+  let colIndex = 0;
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      if (data[i][j] > maxNum) {
+        maxNum = data[i][j];
+        rowIndex = i;
+        colIndex = j;
+      }
+    }
+  }
+
+  console.log(maxNum);
+  console.log(rowIndex + 1, colIndex + 1);
+}
+main();
+
+/**
+ * 표준 입력장치(콘솔)에서 여러줄로 입력된 줄당 여러 건의 데이터를 읽어서 숫자로 변환한 후
+ * 배열로 저장하여 반환한다.
+ * @returns {[]} 2차원 배열
+ */
+function getData() {
+  const fs = require('fs');
+  // '23 48\n25\n'
+  const fileData = fs.readFileSync(0).toString();
+  // ['23 48', '25']
+  const arr = fileData.trim().split('\n');
+
+  const result = []; // 리턴할 2차원 배열
+  for (let i = 0; i < arr.length; i++) {
+    const row = arr[i]; // '23 48', '25'
+    const rowArr = row.split(' '); // ['23', '48'], ['25']
+    for (let k = 0; k < rowArr.length; k++) {
+      rowArr[k] = isNaN(rowArr[k]) ? rowArr[k] : parseInt(rowArr[k]);
+    }
+    result.push(rowArr);
+  }
+  return result;
+}

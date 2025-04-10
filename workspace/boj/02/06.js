@@ -38,26 +38,62 @@ KOI 전자에서는 건강에 좋고 맛있는 훈제오리구이 요리를 간�
 예제 출력 3
 0 13
 */
+function main() {
+  const data = getData();
+  // const A = data[0][0]; //현재시작
+  // const B = data[0][1]; //현재분
+  // const C = data[1][0]; //필요한시간
 
-const fs = require('fs');
-const fileData = fs.readFileSync(0).toString().trim().split(/\s+/);
+  // let endHour = A;
+  // let endTime = B + C;
+  // if (endTime >= 60) {
+  //   endHour += Math.floor(endTime / 60); //끝나는 시간
+  //   endTime = endTime % 60; //끝나는 분
 
-const dataHour = parseInt(fileData[0]);
-const dataMin = parseInt(fileData[1]);
-const endTime = parseInt(fileData[2]);
+  //   if (endHour >= 24) {
+  //     endHour = endHour - 24;
+  //   }
+  // }
 
-const sum = dataMin + endTime;
+  // console.log(endHour + ' ' + endTime);
 
-if (sum >= 60) {
-  const mathHour = Math.floor(sum / 60);
-  const min = sum % 60;
+  const h = data[0][0];
+  const m = data[0][1];
+  const c = data[1][0];
+  let totalMin = h * 60 + m + c;
 
-  const hour = dataHour + mathHour;
-  if (hour >= 24) {
-    console.log(hour - 24, min);
-  } else {
-    console.log(hour, min);
+  if (totalMin >= 60 * 24) {
+    totalMin -= 60 * 24;
   }
-} else {
-  console.log(dataHour, sum);
+  const result = {
+    hour: Math.floor(totalMin / 60) % 24,
+    minute: totalMin % 60,
+  };
+
+  console.log(result.hour, result.minute);
+}
+main();
+
+/**
+ * 표준 입력장치(콘솔)에서 여러줄로 입력된 줄당 여러 건의 데이터를 읽어서 숫자로 변환한 후
+ * 배열로 저장하여 반환한다.
+ * @returns {[]} 2차원 배열
+ */
+function getData() {
+  const fs = require('fs');
+  // '23 48\n25\n'
+  const fileData = fs.readFileSync(0).toString();
+  // ['23 48', '25']
+  const arr = fileData.trim().split('\n');
+
+  const result = []; // 리턴할 2차원 배열
+  for (let i = 0; i < arr.length; i++) {
+    const row = arr[i]; // '23 48', '25'
+    const rowArr = row.split(' '); // ['23', '48'], ['25']
+    for (let k = 0; k < rowArr.length; k++) {
+      rowArr[k] = isNaN(rowArr[k]) ? rowArr[k] : parseInt(rowArr[k]);
+    }
+    result.push(rowArr);
+  }
+  return result;
 }
