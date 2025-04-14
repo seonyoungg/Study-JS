@@ -75,3 +75,19 @@ zzaz
 2
 */
 
+const fs = require('fs');
+// const fileData = fs.readFileSync(0).toString().trim().split('\n');
+const fileData = [2, 'yzyzy', 'zyzyz'];
+
+for (let i = 1; i < fileData.length; i++) {
+  const word = fileData[i].split('');
+  let resultWord = word[0];
+
+  for (let j = 1; j < word.length; j++) {
+    if (word[j] !== word[j - 1]) {
+      resultWord += word[j]; // 앞 글자랑 다르면 추가
+    }
+  }
+
+  console.log(resultWord);
+}

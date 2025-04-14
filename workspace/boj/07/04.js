@@ -32,3 +32,36 @@ https://u.acmicpc.net/6000c956-1b07-4913-83c3-72eda18fa1d1/Screen%20Shot%202021-
 260
 */
 
+const fs = require('fs');
+const fileData = fs.readFileSync(0).toString().trim().split('\n');
+
+// 100 * 100 배열생성
+const paper = [];
+for (let i = 0; i < 100; i++) {
+  paper.push(new Array(100).fill(0));
+}
+// const paper = Array(100).fill(Array(100).fill(0));
+// console.log(paper);
+
+// (a, b) 좌표값 위치에 따른 색칠(1)
+for (let i = 0; i < fileData.length; i++) {
+  const [a, b] = fileData[i].trim().split(' ').map(Number);
+
+  for (let k = a; k < a + 10; k++) {
+    for (let j = b; j < b + 10; j++) {
+      paper[k][j] = 1;
+    }
+  }
+}
+
+// 100*100 배열(paper)의 1의 갯수
+let count = 0;
+for (let k = 0; k < 100; k++) {
+  for (let j = 0; j < 100; j++) {
+    if (paper[k][j] === 1) {
+      count += 1;
+    }
+  }
+}
+
+console.log(count);

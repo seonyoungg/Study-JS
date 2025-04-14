@@ -1,1 +1,1 @@
-baaa
+basicWords.reverse();
