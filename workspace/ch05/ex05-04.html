@@ -11,10 +11,11 @@
       <!-- 이벤트 등록 방법 2: HTML 요소의 on<event> 속성의 값으로 이벤트 발생시 실행할 코드를 등록 -->
       <button onclick="console.log('눌렀지');">눌러봐</button>
       <!--
-    btn.onclick = function(){
-      console.log('눌렀지');
-    };
-    --></div>
+      btn.onclick = function(){
+        console.log('눌렀지');
+      };
+      -->
+    </div>
 
     <script>
       const btn = document.querySelector('button');
@@ -32,9 +33,17 @@
       btn.addEventListener('click', function () {
         console.log('누름');
       });
-      btn.addEventListener('click', function () {
-        console.log('눌렀소');
-      });
+
+      // btn.addEventListener('click', timer()); // 바로실행(함수호출)
+      btn.addEventListener('click', timer); //클릭시실행(함수참조)
+
+      function timer() {
+        setInterval(function () {
+          console.log('눌렀소');
+        }, 1000);
+      } //현재 return값이 없음
+
+      btn.removeEventListener('dbclick', timer);
     </script>
   </body>
 </html>
