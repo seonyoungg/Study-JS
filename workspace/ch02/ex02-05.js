@@ -9,4 +9,7 @@ function add(a,b){
   return result;
 }
 
-console.log(add(10, 20));
+console.log(add(10, 20)); // 30, this=>window
+
+console.log(add.call({name:'call'},30,40)); // 70. this=>{}
+console.log(add.apply({name:'apply'},[30,40])); // 70. this={} //apply는 매개변수 최대 2개

@@ -14,6 +14,7 @@ const arr = [num, str]; // object(array)
 
 // 함수를 변수에 할당
 const foo = function() {
+  console.log(this);
   return 'foo';
 }
 
@@ -28,3 +29,9 @@ obj.baz=function(){
 };
 
 console.log(foo(),arr[3](),obj.bar(),arr[2].bar(),obj.baz());
+
+
+// foo() this 는 window
+// arr[3]() this 는 arr
+// obj.bar() this는 obj
+// arr[2].bar() this는 obj
