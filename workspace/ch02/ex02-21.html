@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>익명함수사용</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            console.log('1. load 이벤트 발생')
+
+            const btn = document.querySelector('button');
+            btn.addEventListener('click',()=>{
+                console.log('3. 클릭 이벤트 발생!!!!!!');
+
+                const msg = '5. 버튼 누른 후 3초 지남';
+                
+                setTimeout(()=>{
+                    console.log(msg);
+                },3000);
+
+                console.log('4. 클릭 이벤트 종료!!!!!')
+            })
+            
+            console.log('2. load 이벤트 완료')
+        })
+    </script>
+</head>
+<body style="background: #222; color:#fff;">
+    <h1>익명함수사용예제</h1>
+    <h2>콜백함수사용예제</h2>
+    <button>눌러봐</button>
+</body>
+</html>
