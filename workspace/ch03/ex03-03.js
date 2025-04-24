@@ -13,13 +13,13 @@ const User = function(name){
     this.name=name;
   };
   
-  User.prototype.getName=function(){
-    return this.name;
-  }
-  
-  User.prototype.setName=function(newName){
-      return this.name = newName;
-  }
+User.prototype.getName=function(){
+  return this.name;
+}
+
+User.prototype.setName=function(newName){
+    return this.name = newName;
+}
   
 const haru = new User('하루핑');
 const namu = new User('나무핑');

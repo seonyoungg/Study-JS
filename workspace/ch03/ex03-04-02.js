@@ -29,18 +29,16 @@ console.log(s1.avg());
  * @param {number} kor 국어 점수
  * @param {number} eng 영어 점수
  */
+
+
 function College(kor, eng){
-    this.kor = kor ;
+    this.kor = kor;
     this.eng = eng;
 }
 
-College.prototype.sum = function(){
-    return this.kor + this.eng;
-}
-
-College.prototype.avg = function(){
-    return Math.round(this.sum()/2);
-}
+//  College가 HighSchool을 상속받는다
+College.prototype = new HighSchool();
+College.prototype.constructor = College;
 
 College.prototype.grade = function(){
     

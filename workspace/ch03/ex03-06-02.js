@@ -33,12 +33,19 @@ console.log(s1.avg());
  */
 
 class College extends HighSchool {
-    //생성자에 특별한 추가 로직이 없다면, College의 생성자 생략도 가능
-    constructor(kor,eng){
-        super(kor,eng)
+    constructor(kor, eng, math) {
+        super(kor, eng); // kor, eng는 부모한테 전달
+        this.math = math; // math는 College에서 따로 추가
     }
 
-    
+    sum() {
+        // 3과목 합산
+        return this.kor + this.eng + this.math;
+    }
+
+    avg() {
+        return Math.round(this.sum() / 3);
+    }
 
     grade() {
         const number = this.avg();
@@ -51,7 +58,7 @@ class College extends HighSchool {
     }
 }
 
-const c1 = new College(80, 99);
-console.log(c1.sum());   // 179
-console.log(c1.avg());   // 90
-console.log(c1.grade()); // A
+const c1 = new College(90, 95,80);
+console.log(c1.sum());   
+console.log(c1.avg());   
+console.log(c1.grade()); 

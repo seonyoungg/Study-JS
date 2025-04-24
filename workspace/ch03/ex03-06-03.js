@@ -7,20 +7,29 @@
  * @param {number} kor 국어 점수
  * @param {number} eng 영어 점수
  */
-class HighSchool{
-    constructor(kor,eng){
-        this.kor=kor;
-        this.eng=eng;
+class HighSchool {
+    constructor(...scores) {
+        this.scores = scores; // 점수들을 배열로 저장
     }
 
-    sum(){
-        return this.kor+this.eng;
+    sum() {
+        return this.scores.reduce((acc, val) => acc + val, 0);
+        // let acc = 0;
+        // for (let i = 0; i < scores.length; i++) {
+            // acc = acc + scores[i];
+        // }
     }
 
-    avg(){
-        return Math.round(this.sum()/2);
+    avg() {
+        return Math.round(this.sum() / this.scores.length);
     }
 }
+
+// reduce()
+// array.reduce((누적값, 현재값) => { ... }, 초기값)
+// 누적값 (acc) : 계산된 값이 누적돼서 전달됨
+// 현재값 (val) : 배열을 순회하며 하나씩 전달됨
+// 초기값 : 누적값의 시작값
 
 const s1 = new HighSchool(100, 91);
 console.log(s1.sum());
@@ -33,13 +42,6 @@ console.log(s1.avg());
  */
 
 class College extends HighSchool {
-    //생성자에 특별한 추가 로직이 없다면, College의 생성자 생략도 가능
-    constructor(kor,eng){
-        super(kor,eng)
-    }
-
-    
-
     grade() {
         const number = this.avg();
 
@@ -51,7 +53,7 @@ class College extends HighSchool {
     }
 }
 
-const c1 = new College(80, 99);
-console.log(c1.sum());   // 179
-console.log(c1.avg());   // 90
-console.log(c1.grade()); // A
+const c1 = new College(90, 95,80);
+console.log(c1.sum());   
+console.log(c1.avg());   
+console.log(c1.grade()); 
