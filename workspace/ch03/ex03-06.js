@@ -34,11 +34,15 @@ console.log(s1.avg());
 
 class College extends HighSchool {
     //생성자에 특별한 추가 로직이 없다면, College의 생성자 생략도 가능
-    constructor(kor,eng){
-        super(kor,eng)
-    }
+    // constructor(kor,eng){
+    //     super(kor,eng)
+    // }
 
-    
+    // constructor()를 생략할 경우 자동으로 추가 (이런형태임)
+    // constructor(...args){
+    //     super(...args);
+    // }  
+
 
     grade() {
         const number = this.avg();
