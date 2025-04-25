@@ -32,17 +32,13 @@ console.log(s1.avg());
 
 // College 생성자 정의 누락된 부분 보완
 function College(kor, eng){
-    this.kor = kor;
-    this.eng = eng;
-    // HighSchool.call(this, kor, eng);  // 부모 생성자 호출
+    // this.kor = kor;
+    // this.eng = eng;
+    HighSchool.call(this, kor, eng);  
 }
 
-// College가 HighSchool을 상속받는다 (중계 함수 이용)
-const F = function() {};      // 중계 함수 정의
-F.prototype = HighSchool.prototype;
-
-College.prototype = new F();
-College.prototype.constructor = College;
+//js.mylib에 정의
+mylib.inherite(HighSchool, College);
 
 College.prototype.grade = function(){
     const number = this.avg();
