@@ -2,7 +2,7 @@
 // 개발 환경 확인
 (() => {
     function hello(name) {
-        return `Hello ${name}`;
+        return 'Hello ' + name;
     }
-    console.log(hello('Typescript'));
+    console.log(hello('TypeScript'));
 })();

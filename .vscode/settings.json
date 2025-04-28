@@ -1,4 +1,12 @@
 {
-    "vscode-pokemon.pokemonSize": "small",
-    "vscode-pokemon.theme": "beach"
+  "files.readonlyInclude": {
+    "PPT/**": true,
+    "sample/**": true,
+    "workspace-ins/**": true,
+    "workspace/ch06/*.js": true
+  },
+  "files.readonlyExclude": {
+    "workspace/ch06/ex06-18-02.js": true,
+    "workspace/ch06/ex06-23.js": true
+  }
 }

@@ -51,7 +51,7 @@
         // TODO 3. 버튼 클릭 이벤트 핸들러 등록
         button.addEventListener('click', (event) => {
           // TODO 4. moveItem 함수 호출
-          moveItem(event);
+          moveItem(event.currentTarget);
         });
       }
     });
@@ -63,11 +63,11 @@
     function moveItem(btn) {
       console.log(btn, '버튼 클릭');
       // TODO 5. 이동할 항목(클릭한 버튼의 부모 li)과 그 부모(ul) 요소 찾기
-      const targetLi = btn.target.closest('li');
+      const targetLi = btn.closest('li');
       const ul = targetLi.closest('ul');
 
       // TODO 6. 이동 방향 찾기(up/down)
-      const direction = btn.target.dataset.direction;
+      const direction = btn.dataset.direction;
       
       if (direction === 'up') {
         // TODO 7. targetLi의 이전 형제 요소 찾기
