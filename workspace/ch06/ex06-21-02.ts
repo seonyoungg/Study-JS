@@ -8,10 +8,22 @@
   function checkNumber(x: number, y: number) {
     if(x === 10){
       return 10; // 10 리터럴 타입
+    }else if (x ===20){
+      return 20; 
+    }else if(x>y){
+      return 'x가 큼';
+    } else if(x<y){
+      return 'y가 큼';
+    } else if (x===y){
+      return 'x,y는' + x;
+    } else if (x === 30){
+      return x+ y;
+    }else{
+      return x;
     }
   }
 
-  const returnValue = checkNumber(10, 20);
+  const returnValue = checkNumber(10, 20); 
   console.log(returnValue);
 
 })();

@@ -7,5 +7,11 @@
         title: '타입 추론',
         content: '타입스크립트가 코드를 분석해서 적절한 타입을 자동으로 지정',
     };
-    const todo2 = {};
+    const todo2 = {
+        id: 13,
+        title: '하이',
+        content: '바이',
+    };
+    todo2.id = '아이디'; // 가능!
+    console.log(todo1, todo2);
 })();

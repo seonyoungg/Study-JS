@@ -1,6 +1,6 @@
 // 드롭다운 리스트 생성 - 자바스크립트
 
-(()=>{
+(() => {
   const cityList = [
     { value: 'Seoul', selected: false },
     { value: 'busan' },
@@ -15,11 +15,16 @@
   ];
 
   // FIXME: 아래 출력 결과와 같이 출력 되도록 함수 작성
-  function createDropdownList(list){
+  function createDropdownList(list) {
     let value;
     let options = '';
-    
-    return `<select>\n${ options }\n</select>`;
+
+    for (let item of list) {
+      const value = item.value;
+      const selected = item.selected ? 'selected' : '';
+
+      options += `<option ${selected}>${typeof value === 'string' ? value.toUpperCase() : value}</option>\n`};
+    return `<select>\n${options}\n</select>`;
   }
 
   /* 출력 결과

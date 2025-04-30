@@ -9,8 +9,22 @@
     content: '타입스크립트가 코드를 분석해서 적절한 타입을 자동으로 지정',
   };
 
+  // todo1.done = true //error
+  // todo1.id = '12' //error
   
-  interface Todo {}
+  interface Todo {
+    id : string | number;
+    title : string;
+    content : string;
+  }
 
-  const todo2 = {};
+  const todo2 : Todo= {
+    id : 13,
+    title : '하이',
+    content : '바이',
+  };
+
+  todo2.id = '아이디'; // 가능!
+
+  console.log(todo1, todo2);
 })();
