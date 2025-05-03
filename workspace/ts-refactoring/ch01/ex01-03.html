@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      console.log('Hello World -1'); //메서드(객체에  정의한 함수)
+
+      // HTML 코드 파싱이 완료된 후 발생
+      window.addEventListener('load', function () {
+        // 버튼 클릭 이벤트 추가
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+          console.log('버튼클릭2');
+
+          const imgItem = document.querySelector('img');
+          imgItem.src =
+            'https://i.namu.wiki/i/9HW0FZ9rOKtJ-cNUPb-Vln2WCoGF5gQnrBKjuEZWcwy7UjIaYAKtNS5KmqQrJZHaQgMgDBhuxLuQbCyEeKo3ZEaMyGVbwIRC-TOpJWuACAKG7IQg8NW6z1b0rMeDzh7vvkcVAjJqsny3Z-ax1kHLDg.webp';
+        });
+      });
+    </script>
+    <style>
+      body * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      "
+    >
+      <h1>어서와 자바스크립트는 좀 익숙해졌지?</h1>
+      <button>버튼</button>
+      <img
+        src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F4vaba%2FbtscKmQxvUn%2FZMtFGMF7Knbvac7MDCGKDk%2Fimg.png"
+        alt="어서와짤"
+        width="300"
+        height="300"
+      />
+    </div>
+    <script>
+      console.log('Hello World -2');
+      // 버튼 클릭 이벤트 추가
+      var btn = document.querySelector('button');
+      btn.addEventListener('click', function () {
+        console.log('버튼클릭1');
+      });
+      console.warn('hello world!!!!! - warn');
+      console.error('hello world!!!!! - error');
+      console.debug('hello world!!!!! - debug');
+    </script>
+  </body>
+</html>
