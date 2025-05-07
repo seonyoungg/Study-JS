@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module</title>
+  </head>
+  <body>
+    <h1>Module 예제</h1>
+    <script type="module" src="./index.js"></script>
+
+    <!-- 
+    module = 독립성과 재사용성 
+    -  math.js는 자체 모듈 스코프를 가짐 → 전역 객체(window)에 값 안 붙음
+    - 모듈 내부에서 선언한 변수, 함수, 클래스 등은 자동으로 전역 공간에 노출되지 않음.
+    - 다른 모듈이나 HTML 문서에서 의도적으로 import 하지 않으면 접근할 수 없음.
+      => 내부에서 import { add } from './util.js' 이런 코드 가능
+    -->
+    <!-- <script type="module" src="./math.js"></script>  -->
+
+    <!-- 
+    import나 export 사용 불가
+    모든 선언(var, function, class 등)이 전역(window)에 노출 
+    -->
+    <!-- <script src="./math.js"></script> -->
+  </body>
+</html>

@@ -51,5 +51,5 @@
     // 안전한 속성 접근 예제
     // id = null; // type은 object
     console.log('글자수', id && id.length); // id가 null이면 null 반환
-    console.log('글자수', id === null || id === void 0 ? void 0 : id.length); // 옵셔널 체이닝 연산자 사용
+    console.log('글자수', id?.length); // 옵셔널 체이닝 연산자 사용
 })();

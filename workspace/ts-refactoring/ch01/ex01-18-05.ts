@@ -41,24 +41,24 @@
   }
 
   // 조현수
-  let sum = 0;
-  if (operator == '+') {
-    sum = n1 + n2;
-  } else if (operator == '-') {
-    sum = n1 - n2;
-  } else if (operator == '*') {
-    sum = n1 * n2;
-  } else if (operator == '/') {
-    sum = n1 / n2;
-    if (n1 === 0 || n2 === 0) {
-      console.log('0으로 나눌수 없습니다.');
-    }
-  } else if (
-    !(operator && operator == '-' && operator == '*' && operator == '/')
-  ) {
-    console.log('잘못된 입력');
-  }
-  console.log(`${n1} ${operator} ${n2} = ${sum}`);
+  // let sum = 0;
+  // if (operator == '+') {
+  //   sum = n1 + n2;
+  // } else if (operator == '-') {
+  //   sum = n1 - n2;
+  // } else if (operator == '*') {
+  //   sum = n1 * n2;
+  // } else if (operator == '/') {
+  //   sum = n1 / n2;
+  //   if (n1 === 0 || n2 === 0) {
+  //     console.log('0으로 나눌수 없습니다.');
+  //   }
+  // } else if (
+  //   !(operator && operator == '-' && operator == '*' && operator == '/')
+  // ) {
+  //   console.log('잘못된 입력');
+  // }
+  // console.log(`${n1} ${operator} ${n2} = ${sum}`);
 
   // 오서현
   let result;

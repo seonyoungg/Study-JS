@@ -16,6 +16,8 @@
     // }
     // FIXME 타입 스크립트 클래스 선언(인터페이스 지정)
     class HighSchool {
+        kor;
+        eng;
         constructor(kor, eng) {
             this.kor = kor;
             this.eng = eng;

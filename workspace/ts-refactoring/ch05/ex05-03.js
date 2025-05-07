@@ -16,9 +16,9 @@
             // 송채은: 첫번째 영화 찾은 다음에 nextSibling
             // const firstLi = movies.firstElementChild;
             // const secondLi = firstLi.nextElementSibling;
-            console.log(secondLi === null || secondLi === void 0 ? void 0 : secondLi.firstChild.nodeValue);
+            console.log(secondLi?.firstChild.nodeValue);
             // textContent: 요소노드의 내부 텍스트노드의 문자열 값을 가지고 있는 속성
-            console.log(secondLi === null || secondLi === void 0 ? void 0 : secondLi.textContent);
+            console.log(secondLi?.textContent);
         };
         // 이벤트 등록 방법 3: addEventListener()
         btn3.addEventListener('click', function () {
@@ -29,7 +29,7 @@
                 // 해당노드를 삭제한다.
                 // if(firstLi) firstLi.remove();
                 // firstLi?.remove(); // 옵셔널 체이닝
-                firstLi === null || firstLi === void 0 ? void 0 : firstLi.parentNode.removeChild(firstLi);
+                firstLi?.parentNode.removeChild(firstLi);
             }
         });
     });
