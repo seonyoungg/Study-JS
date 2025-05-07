@@ -1,58 +1,30 @@
-const fs = require('fs');
-const fileData = fs.readFileSync(0).toString().trim();
-
-const score = Number(fileData);
-
-// score가 90 이상 100 이하이면 "A" 출력
-if (score >= 90 && score <= 100) {
-  console.log('A');
-} else {
-  // score가 80 이상 90 미만이면 "B" 출력
-  if (score >= 80 && score < 90) {
-    console.log('B');
-  } else {
-    // score가 70 이상 80 미만이면 "C" 출력
-    if (score >= 70 && score < 80) {
-      console.log('C');
-    } else {
-      // score가 60 이상 70 미만이면 "D" 출력
-      if (score >= 60 && score < 70) {
-        console.log('D');
-      }
-      // score가 60 미만이면 "F" 출력
-      else {
-        console.log('F');
-      }
+"use strict";
+(() => {
+    /*
+    학생의 점수에 따라 학점을 계산하고 출력하는 프로그램입니다.
+    if문을 사용하여 각 점수 구간에 맞는 학점을 출력합니다.
+    */
+    // 학생의 점수를 저장하는 변수 (0~100 사이의 정수)
+    const score = 79;
+    // 학점 계산 로직
+    // 90점 이상 100점 이하: A학점
+    if (score >= 90 && score <= 100) {
+        console.log('A');
     }
-  }
-}
-
-// if (score >= 90 && score < 100) {
-//   console.log('A');
-// } else if (score < 90) {
-//   console.log('B');
-// } else if (score < 80) {
-//   console.log('C');
-// } else if (score < 70) {
-//   console.log('D');
-// } else if (score < 60) {
-//   console.log('F');
-// }
-
-switch (Math.floor(score / 10)) {
-  case 10:
-  case 9:
-    console.log('A');
-    break;
-  case 8:
-    console.log('B');
-    break;
-  case 7:
-    console.log('C');
-    break;
-  case 6:
-    console.log('D');
-    break;
-  default:
-    console.log('F');
-}
+    // 80점 이상 90점 미만: B학점
+    if (score >= 80 && score < 90) {
+        console.log('B');
+    }
+    // 70점 이상 80점 미만: C학점
+    if (score >= 70 && score < 80) {
+        console.log('C');
+    }
+    // 60점 이상 70점 미만: D학점
+    if (score >= 60 && score < 70) {
+        console.log('D');
+    }
+    // 60점 미만: F학점
+    if (score < 60) {
+        console.log('F');
+    }
+})();

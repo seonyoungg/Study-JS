@@ -1,1 +1,4 @@
-console.lop('외부 스크립트 로딩');
+"use strict";
+(() => {
+    console.log('외부 스크립트 로딩');
+})();

@@ -17,7 +17,7 @@
     haru.age++;
     console.log(haru.age, haru3.age); // 7 6
     // spread 문법
-    const haru4 = { ...haru, breed: '이탈리안 그레이 하운드' };
+    const haru4 = Object.assign(Object.assign({}, haru), { breed: '이탈리안 그레이 하운드' });
     haru.age++;
     console.log(haru.age, haru4.age, haru4.breed); // 8 7 
 })();

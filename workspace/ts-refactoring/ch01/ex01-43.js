@@ -1,18 +1,17 @@
-/*
-나머지 매개변수(Rest parameters)
-*/
-
-
-function fn(...args){
-    console.log(args); //가변인자
-
-    for(let arg of args){
-        console.log(arg);
+"use strict";
+(() => {
+    /*
+    나머지 매개변수(Rest parameters)
+    */
+    function fn(...args) {
+        console.log(args);
+        for (let arg of args) {
+            console.log(arg);
+        }
     }
-}
-
-fn();
-fn(1);
-fn(1,2);
-fn(1,2,3);
-fn(1,2,3,5,6,7,1,123,24,21,2,3,)
+    fn();
+    fn(1);
+    fn(1, 2);
+    fn(1, 2, 3);
+    fn(1, 2, 5, 34, 34, 23, 4, 234, 454, 57, 5678, 6, 7, 3441, 2);
+})();
