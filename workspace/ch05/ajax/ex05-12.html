@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJAX</title>
-  <script type="module" src="./ex05-12.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+    <script type="module" src="./ex05-12.js"></script>
+    <style>
+      body * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      #cat-list {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+      }
+    </style>
   </head>
   <body>
     <h1>AJAX 통신(XMLHttpRequest 사용)</h1>
-    <input type="text">
+    <input type="text" />
     <button>이미지 요청</button>
     <ul id="cat-list"></ul>
   </body>
-  </html>
+</html>
