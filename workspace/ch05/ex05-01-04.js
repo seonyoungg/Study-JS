@@ -15,6 +15,6 @@ let purchaseItem = document
   .getElementById('purchases')
   .firstChild.firstChild.nodeValue();
 
-purchaseItem.nodeValu = '양파';
+purchaseItem.nodeValue = '양파';
 
 // console.log(purchaseItem);
